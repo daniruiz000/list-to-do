@@ -24,6 +24,7 @@
 let elementInput = document.querySelector('.program__input');
 let elementAnadir = document.querySelector('.program__btn-anadir');
 let elementList = document.querySelector('.program__container-list');
+
 // let elementTarea = document.querySelector('.program__tarea');
 // let elementNombreTarea = document.querySelector('.program__nombre-tarea');
 // let elementDivBtn = document.querySelector('.program__btndiv');
@@ -32,14 +33,13 @@ let elementList = document.querySelector('.program__container-list');
 
 
 
-
-
 // Variables:
 
 let contador;
 let arrayTareas = [];
-let dataObject= 0;
+let dataObject;
 let iD = 0;
+
 
 // Functions:
 
@@ -50,19 +50,25 @@ function borrarInput(){
 function anadirTarea(tarea) {
     crearObjetoArray(tarea)
     anadirLocal(arrayTareas);
+    pintarTareas(dataObject);
     borrarInput();
 }
+
 function pintarTareas (array){
 
+    
     for ( let i = 0 ; i < array.length ; i++ ){
 
-        console.log(array[i]);
-
-        let elementTarea = document.createElement('div'); 
-        elementTarea.classList.add('program__tarea');
+        // console.log(array);
+        
         let elementNombreTarea = document.createElement('p');
         elementNombreTarea.classList.add('program__nombre-tarea');
         elementNombreTarea.textContent = array[i].name;
+
+        let elementTarea = document.createElement('div'); 
+        elementTarea.classList.add('program__tarea');
+       
+      
         let elementDivBtn = document.createElement('div');
         elementDivBtn.classList.add('program__btndiv');
         let elementBtnEditar = document.createElement('button');
@@ -81,6 +87,7 @@ function pintarTareas (array){
         elementTarea.appendChild(elementNombreTarea);
         elementTarea.appendChild(elementDivBtn);
         elementList.appendChild(elementTarea);
+
     }  
 }
 
@@ -95,18 +102,11 @@ function anadirLocal(array) {
     localStorage.setItem('tarea', JSON.stringify(array));
     let data = localStorage.getItem('tarea');
     dataObject = JSON.parse(data);
-    // console.log(dataObject);
-    pintarTareas(dataObject);
 
-    console.log(dataObject);
-
-    // for (let i = 0; i < array.length; i++) {
-    //     console.log(array[i].name);
-    // }
 }
 
-
 // console.log(dataObject[0].name);
+
 
 //Events:
 
