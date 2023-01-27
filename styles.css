@@ -85,8 +85,8 @@ body {
   min-height: 100vh;
   font-size: 100%;
   max-width: 1440px;
-  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-  font-family: monospace;
+  background: linear-gradient(135deg, #E2B0FF 10%, #9F44D3 100%);
+  font-family: Verdana;
 }
 
 /*
@@ -119,6 +119,7 @@ body {
 .program__text {
   color: white;
   font-size: 30px;
+  text-shadow: 5px 5px 0px rgb(240, 46, 170);
 }
 .program__container-input {
   display: flex;
@@ -127,8 +128,10 @@ body {
   align-items: center;
   background-color: white;
   width: 100%;
-  height: 50px;
+  height: 90px;
   margin: 50px 0 80px 0;
+  border-radius: 15px;
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px;
 }
 .program__input {
   width: 60%;
@@ -140,6 +143,7 @@ body {
   background-color: pink;
   padding: 10px 20px;
   border-radius: 15px;
+  font-size:12px ;
 }
 .program__container-list {
   background-color: white;
@@ -148,6 +152,7 @@ body {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  border-radius: 15px;
 }
 .program__tarea {
   width: 90%;
@@ -171,10 +176,12 @@ body {
   padding: 10px;
   color: white;
   background-color: greenyellow;
+  border-radius: 15px;
 }
 .program__btn-eliminar {
   margin: 10px;
   padding: 10px;
   color: white;
   background-color: rgb(101, 49, 186);
+  border-radius: 15px;
 }/*# sourceMappingURL=styles.css.map */
